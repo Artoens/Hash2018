@@ -19,6 +19,11 @@ namespace Hash2018
 
         public int X => x;
         public int Y => y;
+
+        public int Distance(Point q)
+        {
+            return Math.Abs(x - q.X) + Math.Abs(y - q.Y);
+        }
     }
 
 }
