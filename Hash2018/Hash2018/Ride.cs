@@ -8,22 +8,25 @@ namespace Hash2018
 {
     class Ride
     {
-        private int start;
-        private int finish;
+        private Point start;
+        private Point finish;
         private int delay;
         private int timing;
+        private int id;
 
-        public Ride (int start, int finish, int delay, int timing)
+        public Ride (Point start, Point finish, int delay, int timing, int id)
         {
             this.start = start;
             this.finish = finish;
             this.delay = delay;
             this.timing = timing;
+            this.id = id;
         }
 
-        public int Start => start;
-        public int Finish => finish;
+        public Point Start => start;
+        public Point Finish => finish;
         public int Delay => delay;
         public int Timing => timing;
+        public int ID => id;
     }
 }
