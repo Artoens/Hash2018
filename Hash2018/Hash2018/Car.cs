@@ -8,19 +8,18 @@ namespace Hash2018
 {
     class Car
     {
-        private int posX;
-        private int posY;
+        private int pos;
         private List<Ride> rides;
 
-        public Car(int posX, int posY, List<Ride> rides)
+        public Car(int pos, List<Ride> rides)
         {
-            this.posX = posX;
-            this.posY = posY;
+            this.pos = pos;
             this.rides = rides;
         }
 
-        public int PosX => posX;
-        public int PosY => posY;
+        public int Pos => pos;
         public List<Ride> Rides => rides;
     }
+
+    
 }
