@@ -9,11 +9,10 @@ namespace Hash2018
     class Car
     {
         private int pos = 0;
-        private List<Ride> rides;
+        private List<Ride> rides = new List<Ride>();
 
-        public Car(int posY, List<Ride> rides)
+        public Car()
         {
-            this.rides = rides;
         }
 
 
