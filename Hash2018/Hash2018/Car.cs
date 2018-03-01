@@ -8,13 +8,13 @@ namespace Hash2018
 {
     class Car
     {
+
         private int pos = 0;
         private List<Ride> rides = new List<Ride>();
 
         public Car()
         {
         }
-
 
         public int Pos => pos;
         public List<Ride> Rides => rides;
@@ -34,4 +34,6 @@ namespace Hash2018
         }
 
     }
+
+    
 }
