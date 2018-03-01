@@ -15,6 +15,7 @@ namespace Hash2018
         private int id;
 
         public Ride (Point start, Point finish, int delay, int timing, int id)
+
         {
             this.start = start;
             this.finish = finish;
@@ -27,6 +28,14 @@ namespace Hash2018
         public Point Finish => finish;
         public int Delay => delay;
         public int Timing => timing;
+
         public int ID => id;
+
+
+        public int Poid()
+        {
+            return Math.Abs(start.X - finish.X) + Math.Abs(start.X - finish.Y);
+        }
+
     }
 }
