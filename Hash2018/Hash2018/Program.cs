@@ -15,6 +15,7 @@ namespace Hash2018
             int[] inputCity = input[0];
             input = input.Skip(1).ToArray();
             List<Ride> rides = new List<Ride> { };
+            List<Car> cars = new List<Car> { };
 
             City city = new City(inputCity[0], inputCity[1]);
             int i = 0;
@@ -25,6 +26,11 @@ namespace Hash2018
                 i++;
             }
 
+            for(int j = 0; j<inputCity[2]; j++)
+            {
+                cars.Add(new Car());
+            }
+
             rides.Sort(delegate(Ride x, Ride y) { return x.Delay - y.Delay; });
             
 
@@ -33,6 +39,7 @@ namespace Hash2018
                 Console.WriteLine(r.Delay);
             }
            
+
             /*
             foreach(int[] a in input)
             {

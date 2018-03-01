@@ -26,7 +26,7 @@ namespace Hash2018
             {
                 output += " " + r.ID.ToString();
             }
-            return base.ToString();
+            return output;
         }
 
         public void AddRide(Ride r)
