@@ -53,6 +53,6 @@ namespace Hash2018
 
             // Split every lines and Trim  
             return lines.Select(x => x.Split(' ').Select(y => Convert.ToInt32(y.Trim())).ToArray()).ToArray();
-        }
+        }   
     }
 }
