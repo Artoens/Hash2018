@@ -19,6 +19,16 @@ namespace Hash2018
         public int Pos => pos;
         public List<Ride> Rides => rides;
 
+        public override string ToString()
+        {
+            string output = rides.Count.ToString();
+            foreach(Ride r in rides)
+            {
+                output += " " + r.ID.ToString();
+            }
+            return output;
+        }
+
         public void AddRide(Ride r)
         {
             if (rides.Count() != 0)
@@ -32,7 +42,7 @@ namespace Hash2018
             pos += r.Poid();
             rides.Add(r);
         }
-
+        
     }
 
     

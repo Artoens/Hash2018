@@ -12,19 +12,25 @@ namespace Hash2018
         private Point finish;
         private int delay;
         private int timing;
+        private int id;
 
-        public Ride(Point start, Point finish, int delay, int timing)
+        public Ride (Point start, Point finish, int delay, int timing, int id)
+
         {
             this.start = start;
             this.finish = finish;
             this.delay = delay;
             this.timing = timing;
+            this.id = id;
         }
 
         public Point Start => start;
         public Point Finish => finish;
         public int Delay => delay;
         public int Timing => timing;
+
+        public int ID => id;
+
 
         public int Poid()
         {
