@@ -22,5 +22,15 @@ namespace Hash2018
         public int PosX => posX;
         public int PosY => posY;
         public List<Ride> Rides => rides;
+
+        public override string ToString()
+        {
+            string output = rides.Count.ToString();
+            foreach(Ride r in rides)
+            {
+                output += " " + r.ID.ToString();
+            }
+            return base.ToString();
+        }
     }
 }
