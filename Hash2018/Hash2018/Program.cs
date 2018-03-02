@@ -11,7 +11,7 @@ namespace Hash2018
     {
         static void Main(string[] args)
         {
-            int[][] input = ReadFile("C:/Users/guill/Desktop/Hash2018/a_example.in");
+            int[][] input = ReadFile("C:/Users/guill/Desktop/Hash2018/e_high_bonus.in");
             int[] inputCity = input[0];
             input = input.Skip(1).ToArray();
             List<Ride> rides = new List<Ride> { };
@@ -32,11 +32,33 @@ namespace Hash2018
             }
 
             rides.Sort(delegate (Ride x, Ride y) { return x.Delay - y.Delay; });
-
+            string fileOut = "";
+            Ride fRide;
             foreach (Car car in cars)
             {
-                car.AddRide(Nearest(car.Rides.Last(), rides));
+                car.AddRide(rides[0]);
+                rides.Remove(rides[0]);
+                int k = 0;
+                bool cond = true;
+                while (car.Pos < inputCity[5] && rides.Count != 0 && cond)
+                {
+                    fRide = Nearest(car.Rides.Last(), rides);
+                    if (fRide != null)
+                    {
+
+
+                        rides.Remove(fRide);
+                        car.AddRide(fRide);
+                        k++;
+                    }
+                    else
+                    {
+                        cond = false;
+                    }
+                }
+                fileOut += car.ToString() + '\n';
             }
+            File.WriteAllText("C:/Users/guill/Desktop/Hash2018/output.txt", fileOut);
         }
 
         public static Ride Nearest(Ride ride1, List<Ride> rideList)
@@ -44,7 +66,7 @@ namespace Hash2018
             int minS = int.MaxValue;
             int minT = int.MaxValue;
             int distanceS = 0;
-            Ride finalRide = new Ride(new Point(0,0),new Point(0,0),0,0,0);
+            Ride finalRide = null;
 
             foreach (Ride ride2 in rideList)
             {
